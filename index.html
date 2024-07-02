@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Wheather App</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap" rel="stylesheet" />
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <script src="https://kit.fontawesome.com/ada9dfd0e0.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="static/index.css" />
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.js"></script>
+</head>
+
+<body>
+    <div class="report_display">
+       
+    </div>
+    <header>
+        <nav class="navbar bg-body-tertiary">
+            <div class="container-fluid nav">
+                <div class="d-flex brandName">
+                    <div id="logo">
+                        <img src="/img/planet-earth.png" alt="" srcset="" />
+                    </div>
+
+                    <div class="brandFrontName">
+                        <h3><a class="">Wheather</a></h3>
+                        <h4><a class="dateMain text-light"></a></h4>
+                    </div>
+                </div>
+                
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="topSection">
+            <div class="container-fluid">
+                <div class="row">
+                    <h2>Today OverViews</h2>
+                    <div class="col col-lg-6 col-12 DailyWeather">
+                        <div class="countryDiv d-flex">
+                            <div class="countryIcon"></div>
+                            <div class="countryNames">
+                                <h2 class="countryName"></h2>
+                                <h4 class="cityName"></h4>
+                            </div>
+                            <div class="tempDiv">
+                                <h2 class="temp"></h2>
+                                <h4 class="tempDescription">Temprature</h4>
+                            </div>
+                            <div class="HumidityDiv">
+                                <h2 class="Humidity"></h2>
+                                <h4 class="HumidityDescription">Humidity</h4>
+                            </div>
+                            <div class="windSpeedDiv">
+                                <h2 class="windSpeed"></h2>
+                                <h4 class="windSpeedDescription">Windspeed</h4>
+                            </div>
+                        </div>
+                        <div class="WeatherDailyList"></div>
+                    </div>
+                    <div class="col col-lg-6 col-12 weatherMapContainer">
+                        <div id="map"></div>
+                    </div>
+                </div>
+            </div>
+            <img src="" alt="" />
+        </section>
+        <section class="weeklyCharts">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="d-flex">
+                        <h3>Weekly OverViews</h3>
+                        <a href="#temprature" class="text-secondary"> More</a>
+                    </div>
+                    <div class="col col-lg-6 col-12">
+                        <figure class="highcharts-figure humidityChart">
+                            <div id="humidity"></div>
+                        </figure>
+                        <div class="report"></div>
+                    </div>
+                    <div class="col col-lg-6 col-12">
+                        <figure class="highcharts-figure">
+                            <div id="temprature"></div>
+                        </figure>
+                        <div class="report"></div>
+                    </div>
+                    <div class="col col-lg-6 col-12">
+                        <figure class="highcharts-figure">
+                            <div id="pressure"></div>
+                        </figure>
+                        <div class="report"></div>
+                    </div>
+                    <div class="col col-lg-6 col-12">
+                        <figure class="highcharts-figure">
+                            <div id="rain"></div>
+                        </figure>
+                        <div class="report"></div>
+                    </div>
+                   
+                    <div class="col col-lg-6 col-12">
+                        <figure class="highcharts-figure">
+                            <div id="overViewAll"></div>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+    </footer>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/series-label.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script><script src=""></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="static/index.js"></script>
+</body>
+<script defer>
+    mapboxgl.accessToken = 'pk.eyJ1IjoiZGV2ZW5kcmFuZGV2IiwiYSI6ImNsZzRtd3J5bDBndWozdHFlYzF6NzE0MzMifQ.8LevxtdG4u7SdulscMXHYg';
+    const map = new mapboxgl.Map({
+    container: 'map',
+    center: [80,13],
+    zoom: 12,
+   
+    });
+    var marker = new mapboxgl.Marker({ draggable: true, color: "blue" }).setLngLat([0,0]).addTo(map)
+    marker.on('dragend',()=>{
+        d=marker.getLngLat()
+        fetchWeatherData(d.lat,d.lng);
+
+
+    })
+    map.on('load',()=>{
+        if (navigator.geolocation)
+        setTimeout(()=>{navigator.geolocation.getCurrentPosition(set_position);},1500)
+    })
+    function set_position(data){
+        map.flyTo({center:[data.coords.longitude,data.coords.latitude], zoom:18})
+        marker.setLngLat([data.coords.longitude,data.coords.latitude])
+        d=marker.getLngLat()
+        fetchWeatherData(d.lat,d.lng);
+    }
+</script>
+</html>
